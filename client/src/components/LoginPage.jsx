@@ -8,9 +8,8 @@ import { useUserAuth } from '../Auth/userAuth'
 const LoginPage = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-    const [loading, setLoading] = useState(false);
     const {setToken,token} = useUserAuth()
-    
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
       if(token){
         navigate("/dashboard")
@@ -36,7 +35,7 @@ const LoginPage = () => {
 
     const handleSubmit = async(e)=>{
       e.preventDefault()
-
+setLoading(true)
 
       try {
         const loginUser = await post("/login",user)
@@ -62,6 +61,8 @@ const LoginPage = () => {
         email:"",
         password:"",
       })
+      }finally{
+        setLoading(false)
       }
     }
   return (
