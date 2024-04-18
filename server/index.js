@@ -4,6 +4,7 @@ const routes = require("./routes/routers")
 const dbconnect = require("./utils/db")
 const dotenv = require("dotenv")
 const app = express()
+const port = process.env.PORT || 5000;
 
 
 dotenv.config()
@@ -24,6 +25,6 @@ app.use("/api",routes)
 
 
 
-app.listen(process.env.PORT,()=>{
-    console.log("server is running");
+app.listen(port,()=>{
+    console.log(`server is running at port ${port}`);
 })
