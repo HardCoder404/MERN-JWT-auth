@@ -42,7 +42,7 @@ const SidebarNavbar = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
               <div className="flex ms-2 md:me-24 cursor-pointer"onClick={()=>navigate("/dashboard")}>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxsSYBOs3mZVAZfsbJ80cuxu28Ww6aIiP1dYUNcI43Yg&s" className="h-8 me-3" alt="todos logo" />
+                <img src="https://www.iconarchive.com/download/i99584/blackvariant/button-ui-requests-5/ToDo-List.1024.png" className="h-11 me-3" alt="todos logo" />
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Todos</span>
               </div>
             </div>

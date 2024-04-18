@@ -11,6 +11,7 @@ const LoginPage = () => {
     const {setToken,token} = useUserAuth()
     const [loading, setLoading] = useState(false);
     useEffect(() => {
+      document.title="Login - Todos"
       if(token){
         navigate("/dashboard")
       }

@@ -16,6 +16,7 @@ const RegisterPage = () => {
     password:"",
   })
   useEffect(() => {
+    document.title="Register - Todos"
     if(token){
       navigate("/dashboard")
     }

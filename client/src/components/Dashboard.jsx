@@ -65,6 +65,7 @@ useEffect(() => {
 
 // *********  Add data to local storage  ************
 useEffect(() => {
+  
   localStorage.setItem('Lists',JSON.stringify(items))   // yha setItem jo hai wo key,value format me data leta hia..ab eska kya mtlb hai? mtlb ki jo pahala wala hoga wo toh string format me hoga..or uska naam tum kuch v rkh sakte ho..jaise maine avi yha lists rkha hai..toh jaroori nahi yhi hoga kuch v rkh sakte ho..like abc,xyz..etc. 
 
   // Yha jo dono data hoti hai..wo string format me hi hogi...mtlb local storage me data hmesa string format me hi jata hia..toh agar tumhara string format me nahi h toh use string me bnao... yha mai JSON.Stringify use kr ra hu ..usko string m convert krne k lie
