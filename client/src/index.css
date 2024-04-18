@@ -3,15 +3,23 @@
 @tailwind utilities;
 
 @media (min-width:320px) and (max-width:426px) {
-    .Login-page{
-        padding: 15px;
-        background-color: #fff;
+    .login-page{
+        position: relative;
+        right: 210px;
+        width: 100%;
+        border: none;
+        bottom: 30px;
+
     }
     .Register-page{
-        padding: 8px;
-        background-color: #fff;
-        height: 100vh;
-        overflow-y: hidden;
+      position: relative;
+      right: 210px;
+      width: 100%;
+      border: none;
+      bottom: 30px;
+    }
+    .main-c{
+      margin-bottom: 30px;
     }
     .image-part{
         display: none;
@@ -19,6 +27,37 @@
     .bottom-part{
         margin-top: 20px;
     }
+   .searchR{
+    position: relative;
+    right: 70px;
+   }
+   .searchbox{
+    position: relative;
+    right: 240px;
+   }
+   .removeall{
+    padding: 10px;
+    align-items: center;
+   }
+   .tablepart{
+      position: relative;
+      width: 645px;
+      left: 60px;
+   }
+   .task{
+    height: 100%;
+    margin-top: 15rem;
+   }
+   .logoutModal{
+    position: absolute;
+    left: 256px;
+    height: 100vh;
+   }
+   .toggleModal{
+    position: relative;
+    right: 65%;
+    width: 380px;
+   }
 }
 
 a.active{

@@ -69,8 +69,8 @@ const RegisterPage = () => {
        </div>
        <div className="flex items-center md:p-8 p-6 bg-white md:rounded-tl-[55px] md:rounded-bl-[55px] h-full">
        <form className="max-w-lg  w-full mx-auto"onSubmit={handleSubmit}>
-          <div className="mb-12">
-            <h3 className="text-4xl mt-2  font-extrabold">Create an account</h3>
+          <div className="mb-12 main-c">
+            <h3 className="text-4xl mt-2  font-extrabold">Create an <span className='account-text'>account</span></h3>
           </div>
           <div>
             <label className="text-xs block mb-2">Username*</label>

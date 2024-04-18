@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { ClipboardCheck,LayoutDashboard ,LogOut} from 'lucide-react';
 import {useNavigate} from "react-router-dom"
 import { useUserAuth } from '../Auth/userAuth';
@@ -10,6 +10,12 @@ const SidebarNavbar = () => {
     const navigate = useNavigate();
     const {token,logout}=useUserAuth()
     const [showConfirmation, setShowConfirmation] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+    
 
     const handleLogout = () => {
       setShowConfirmation(true);
@@ -46,14 +52,75 @@ const SidebarNavbar = () => {
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Todos</span>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className='flex items-center' >
                 <div className="flex items-center ms-3">
-                  <div>
-                    <button type="button" className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                  <div className='flex gap-2'>
+                    <button type="button" className="flex text-sm top-1 relative rounded-full" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                       <span className="sr-only">Open user menu</span>
-                      <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo"/>
+                      <img className="w-9 h-9 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo"/>
                     </button>
+
+                    {/* hamburger Ic  on  */}
+                    <div className="relative">
+            <button
+                onClick={toggleDropdown}
+                type="button"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                aria-expanded={isOpen ? "true" : "false"}
+                aria-controls="navbar-user"
+            >
+                <span className="sr-only">Open main menu</span>
+                <svg
+                    className="w-5 h-5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 14"
+                >
+                    <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M1 1h15M1 7h15M1 13h15"
+                    />
+                </svg>
+            </button>
+            {isOpen && (
+                <div className="absolute z-50 pb-5 pl-5 pr-5 pt-2 border-t right-0 mt-2 w-48 h- bg-white rounded-md shadow-lg" id="navbar-user">
+           <ul className="py-1">
+                    <div>
+              <li>
+                  <NavLink to="/dashboard">
+                      <span className="flex items-center p-2  rounded-lg cursor-pointer hover:bg-violet-200">
+                      <LayoutDashboard/>
+                      <span className="ms-3">Dashboard</span>
+                  </span>
+                  </NavLink>
+                </li>
+                <li>
+                 <NavLink to="/tasks">
+                    <span className="flex items-center p-2 rounded-lg cursor-pointer hover:bg-violet-200">
+                    <ClipboardCheck />
+                    <span className="ms-3">My Tasks</span>
+                    </span>
+                    </NavLink>
+                </li>   
+              </div>
+        <div className="flex flex-col relative top-4 justify-end">
+            <button className="w-full border-t flex items-center text-start p-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={handleLogout}>
+              <LogOut />
+              <span className="flex-1 ms-3 text-lg whitespace-nowrap">Logout</span>
+            </button>
+        </div>
+
+                </ul>
+                </div>
+            )}
+        </div>
+                
                   </div>
+                  
                 </div>
               </div>
           </div>
@@ -96,12 +163,12 @@ const SidebarNavbar = () => {
       {showConfirmation && (  
         <div
           id="popup-modal"
-          className="fixed inset-0 w-screen flex justify-center items-center z-50 bg-gray-700 bg-opacity-60"
+          className="logoutModal fixed inset-0 w-screen flex justify-center items-center z-50 bg-gray-700 bg-opacity-60"
           onClick={() => setShowConfirmation(false)} // Close modal when clicking outside
         >
-           <div className="absolute w-screen inset-0 flex items-center justify-center">
-          <div className="relative pop-up bg-white rounded-lg shadow-lg w-96">
-            <div className="p-4 md:p-5 text-center">
+           <div className="absolute logoutModal w-screen inset-0 flex items-center justify-center">
+          <div className="relative toggleModal pop-up bg-white rounded-lg shadow-lg w-96">
+            <div className=" p-4 md:p-5 text-center">
               <svg
                 className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
                 xmlns="http://www.w3.org/2000/svg"

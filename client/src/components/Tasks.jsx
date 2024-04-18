@@ -132,11 +132,11 @@ const Tasks = () => {
     <div>
       <SidebarNavbar />
 
-      <div className='flex flex-col justify-center items-center h-screen bg-white'>
+      <div className='task flex flex-col justify-center items-center h-screen bg-white'>
 
-<div className='flex relative left-64 gap-3'>
+<div className='searchR flex relative left-64 gap-3'>
 
-      <div className="pt-2 relative bottom-2 mx-auto text-gray-600">
+      <div className="pt-2 searchbox relative bottom-2 mx-auto text-gray-600">
         <input className="border-2 border-gray-300 bg-white h-10 px-5 w-72 pr-16 rounded-lg text-sm focus:outline-none"
           type="search" name="search" placeholder="Search" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} />
         <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
@@ -146,7 +146,7 @@ const Tasks = () => {
      
       <button
         type="button"
-        className="text-white relative bg-red-700 hover:bg-red-800  focus:outline-none dark:hover:bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center h-10 w-full text-center"
+        className="text-white removeall relative bg-red-700 hover:bg-red-800  focus:outline-none dark:hover:bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center h-10 w-full text-center"
         onClick={handleRemoveAll}
       >
         Remove All
@@ -204,17 +204,17 @@ const Tasks = () => {
 
 
         {/* Render todo items in a table */}
-        <div className="overflow-y-auto max-h-[70vh] table-container w-full sm:w-1/2 ml-40 shadow-md sm:rounded-lg">
+        <div className="tablepart overflow-y-auto max-h-[70vh] table-container w-full sm:w-1/2 ml-40 shadow-md sm:rounded-lg">
           <table className="w-full sticky-header text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-sm text-white uppercase bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-sm tablehead text-white uppercase bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="trow px-6 py-3">
                   ID
                 </th>
-                <th scope="col" className="pl-20 pr-96 py-3">
+                <th scope="col" className="trow pl-20 pr-96 py-3">
                   Tasks
                 </th>
-                <th scope="col" className="pr-5 py-3">
+                <th scope="col" className="trow pr-5 py-3">
                   Action
                 </th>
               </tr>

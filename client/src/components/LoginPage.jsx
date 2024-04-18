@@ -69,8 +69,8 @@ setLoading(true)
   return (
      // Login Page : 
      <div className="login-page font-[sans-serif] backdrop-blur-lg bg-gray-900 text-[#333] ml-52 mr-52 mt-12 border rounded-l-3xl">
-     <div className="grid md:grid-cols-2 items-center gap-8 h-full">
-       <div className="max-md:order-1 p-4">
+     <div className=" grid md:grid-cols-2 items-center gap-8 h-full">
+       <div className="image-part max-md:order-1 p-4">
          <img src="https://readymadeui.com/signin-image.webp" className="lg:max-w-[80%] w-full h-full object-contain block mx-auto"/>
        </div>
        <div className="flex items-center md:p-12 p-6 bg-white md:rounded-tl-[55px] md:rounded-bl-[55px] h-full">

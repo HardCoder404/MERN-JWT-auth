@@ -76,9 +76,9 @@ useEffect(() => {
     <div>
       <SidebarNavbar/>
     {/* main content  */}
-    <div className='flex flex-col justify-center items-center h-screen bg-gray-100'>
-    <div className="w-full max-w-sm p-4 border bg-white border-gray-200 rounded-3xl shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    
+    <div className='flex flex-col justify-center items-center mt-64'>
+    <div className=" relative bottom-8 max-w-sm p-4 border bg-white border-gray-200 rounded-3xl shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+
     <h1 className='font-bold text-2xl text-center mb-2'>TODO List</h1>
     <hr className='text-gray-400 font-bold shadow-lg border  mb-10' />
 
