@@ -1,0 +1,5 @@
+/node_modules
+.env     
+# agar env file ko github pe push nahi krna h toh...ase hi krte hia... forward slash nahi lagate....      
+
+

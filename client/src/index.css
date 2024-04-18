@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width:320px) and (max-width:426px) {
+    .Login-page{
+        padding: 15px;
+        background-color: #fff;
+    }
+    .Register-page{
+        padding: 8px;
+        background-color: #fff;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .image-part{
+        display: none;
+    }
+    .bottom-part{
+        margin-top: 20px;
+    }
+}
+
+a.active{
+    color: rgb(227, 60, 227);
+}
+.table-container {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set maximum height for the container to enable scrolling */
+    
+  }
+  
+  /* Webkit browsers (e.g., Chrome, Safari) */
+  .table-container::-webkit-scrollbar {
+    width: 7px; /* Set the width of the scrollbar */
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #e34040; /* Set the color of the scrollbar thumb */
+    border-radius: 10px; /* Set the border radius of the scrollbar thumb */
+  }
+  
+  /* Other scrollbar properties */
+  .table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Set the background color of the scrollbar track */
+  }
+
+
+  .sticky-header thead {
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Ensure the heading row appears above other content */
+    background-color: #3014ce; /* Set the background color for the sticky heading */
+  }
